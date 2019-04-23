@@ -1,5 +1,5 @@
 {
-  "name": "sample-Nuxt-ts-OnsenUI",
+  "name": "Nuxt-TypeScript",
   "version": "1.0.0",
   "description": "My neat Nuxt.js project",
   "author": "Tsuyoshi Hirosawa",
@@ -13,11 +13,15 @@
   },
   "dependencies": {
     "@nuxt/typescript": "^2.6.2",
+    "@nuxtjs/pwa": "^3.0.0-beta.14",
     "core-js": "^3.0.1",
     "cross-env": "^5.2.0",
+    "lodash": "^4.17.11",
     "nuxt": "^2.6.2",
     "ts-node": "^8.1.0",
-    "typescript": "^3.4.4"
+    "typescript": "^3.4.4",
+    "vue-property-decorator": "^8.1.0",
+    "vuex-class": "^0.3.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^1.7.0",

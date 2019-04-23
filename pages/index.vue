@@ -3,7 +3,7 @@
     <div>
       <logo />
       <h1 class="title">
-        sample-Nuxt-ts-OnsenUI
+        Nuxt-TypeScript
       </h1>
       <h2 class="subtitle">
         My neat Nuxt.js project

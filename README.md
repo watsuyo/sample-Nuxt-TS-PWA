@@ -1,4 +1,4 @@
-# sample-Nuxt-ts-OnsenUI
+# Nuxt-TypeScript
 
 > My neat Nuxt.js project
 
