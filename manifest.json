@@ -1,0 +1,13 @@
+{
+  "name":"Nuxt-TypeScript",
+  "short_name":"Nuxt-TypeScript",
+  "icons": [{
+    "src": "images/sample.png",
+      "sizes":"128x128",
+      "type": "image/png"
+    }],
+  "start_url": "/pwa/",
+  "display": "standalone",
+  "background_color": "#EB65E3",
+  "theme_color": "#000"
+}
