@@ -7,11 +7,6 @@
   </div>
 </template>
 
-<script lang="ts">
-  import Vue from 'vue'
-  export default Vue.extend({})
-</script>
-
 <style>
 .VueToNuxtLogo {
   display: inline-block;
@@ -62,23 +57,5 @@
   border-left: 35px solid transparent;
   border-right: 35px solid transparent;
   border-bottom: 60px solid #fff;
-}
-
-@keyframes turn {
-  100% {
-    transform: rotateX(0deg);
-  }
-}
-
-@keyframes godown {
-  100% {
-    top: 180px;
-  }
-}
-
-@keyframes goright {
-  100% {
-    left: 70px;
-  }
 }
 </style>

@@ -1,7 +1,7 @@
 const pkg = require('./package')
 import NuxtConfiguration from '@nuxt/config'
 const environment = process.env.NODE_ENV || 'development';
-const envSet = require(`./env.${environment}.js`)
+const envSet = require(`./env.${environment}.json`)
 
 const nuxtConfig: NuxtConfiguration = {
   mode: 'universal',
@@ -49,7 +49,7 @@ const nuxtConfig: NuxtConfiguration = {
   /*
   ** Build configuration
   */
-  bnuild: {
+  build: {
     extend(config: any, ctx: any) {
       if (ctx.isDev && ctx.isClient) {
         config.module.rules.push({
