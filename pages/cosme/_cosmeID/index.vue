@@ -1,38 +1,28 @@
 <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        Nuxt-TypeScript
-      </h1>
-      <h2 class="subtitle">
-        My neat Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-  </section>
+  <div>
+    <h2>イエベ春</h2>
+    <template v-for="cosme in cosmes">
+      {{ cosme.cosmename }}
+      <img :key="cosme.id" :src="cosme.image" />
+    </template>
+  </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
 
 @Component({
   components: {
     Logo: () => import('~/components/Logo.vue')
+  },
+  async fetch({ store, params }) {
+    await store.dispatch('cosmes/fetchCosmeByCosmeID', params.cosmeID);
   }
 })
-export default class cosmes extends Vue {}
+export default class cosmes extends Vue {
+  @Getter('cosmes/getCosmesByCosmeID') private cosmes!: Cosme[];
+}
 </script>
 
 <style>
