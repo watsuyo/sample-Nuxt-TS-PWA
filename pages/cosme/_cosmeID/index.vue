@@ -11,6 +11,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
+import { Cosme } from '~/store/cosmes/types';
 
 @Component({
   components: {
