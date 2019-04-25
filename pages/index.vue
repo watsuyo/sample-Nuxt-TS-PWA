@@ -29,6 +29,7 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
   components: {
+    // @ts-ignore ←importでエラーが出れば使う
     Logo: () => import('~/components/Logo.vue')
   }
 })
