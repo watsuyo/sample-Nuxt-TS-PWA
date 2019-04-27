@@ -16,5 +16,5 @@ export interface Cosme {
 
 export interface CosmesState {
   all: Cosme[]
-  cosmeByCosmeID: Cosme[]
+  cosmesByCosmeID: Cosme[]
 }

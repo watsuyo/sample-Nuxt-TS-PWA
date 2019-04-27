@@ -15,7 +15,7 @@ import { Cosme } from '~/store/cosmes/types';
 
 @Component({
   async fetch({ store, params }) {
-    await store.dispatch('cosmes/fetchCosmeByCosmeID', params.cosmeID);
+    await store.dispatch('cosmes/fetchCosmesByCosmeID', params.cosmeID);
   }
 })
 export default class cosmes extends Vue {
