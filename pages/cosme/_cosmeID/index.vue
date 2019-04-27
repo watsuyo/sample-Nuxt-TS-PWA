@@ -11,17 +11,16 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
+import { Cosme } from '~/store/cosmes/types';
 
 @Component({
-  components: {
-    Logo: () => import('~/components/Logo.vue')
-  },
   async fetch({ store, params }) {
     await store.dispatch('cosmes/fetchCosmeByCosmeID', params.cosmeID);
   }
 })
 export default class cosmes extends Vue {
-  @Getter('cosmes/getCosmesByCosmeID') private cosmes!: Cosme[];
+  // cosmesの前にprivateをつけるとエラーになる
+  @Getter('cosmes/getCosmesByCosmeID') cosmes!: Cosme[];
 }
 </script>
 
