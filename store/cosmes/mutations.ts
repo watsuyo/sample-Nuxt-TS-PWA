@@ -3,6 +3,6 @@ import { CosmesState, Cosme } from '~/store/cosmes/types'
 
 export default {
   setCosmesByCosmeID(state, { cosme }) {
-    state.cosmeByCosmeID = cosme
+    state.cosmesByCosmeID = cosme
   },
 } as MutationTree<CosmesState>

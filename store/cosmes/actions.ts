@@ -3,7 +3,7 @@ import { CosmesState, Cosme } from '~/store/cosmes/types'
 import axios from 'axios'
 
 export default {
-  async fetchCosmeByCosmeID({ commit }, cosmeID: number) {
+  async fetchCosmesByCosmeID({ commit }, cosmeID: number) {
     const cosmes: Cosme[] = (
       await axios.get(
       `http://localhost:8080/cosme/${cosmeID}`
