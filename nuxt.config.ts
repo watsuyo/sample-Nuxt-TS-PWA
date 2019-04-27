@@ -44,6 +44,7 @@ const nuxtConfig: NuxtConfiguration = {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/pwa'
   ],
 
   /*
