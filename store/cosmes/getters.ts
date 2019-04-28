@@ -4,7 +4,6 @@ import _filter from 'lodash/filter'
 
 export default {
   getCosmesByCosmeID: (state: CosmesState) => {
-    console.log(state.cosmesByCosmeID);
     return _filter(state.cosmesByCosmeID, ((cosme: Cosme) => cosme.cosme_id === 1));
   }
 } as GetterTree<CosmesState, Cosme>

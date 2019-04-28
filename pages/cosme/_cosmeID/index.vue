@@ -1,27 +1,24 @@
 <template>
-  <div>
-    <h2>イエベ春</h2>
+  <CosmeContainer v-slot="{ cosmes }">
     <template v-for="cosme in cosmes">
-      {{ cosme.cosmename }}
-      <img :key="cosme.id" :src="cosme.image" />
+      <CosmeDetail :key="cosme.id" :cosme="cosme" />
     </template>
-  </div>
+  </CosmeContainer>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
-import { Cosme } from '~/store/cosmes/types';
 
 @Component({
+  components: {
+    CosmeContainer: () => import('~/components/container/CosmeContainer.vue'),
+    CosmeDetail: () => import('~/components/presentations/CosmeDetail.vue')
+  },
   async fetch({ store, params }) {
     await store.dispatch('cosmes/fetchCosmesByCosmeID', params.cosmeID);
   }
 })
-export default class cosmes extends Vue {
-  // cosmesの前にprivateをつけるとエラーになる
-  @Getter('cosmes/getCosmesByCosmeID') cosmes!: Cosme[];
-}
+export default class Home extends Vue {}
 </script>
 
 <style>
