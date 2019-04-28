@@ -1,4 +1,4 @@
-# Nuxt-TypeScript
+# Chrole
 
 > My neat Nuxt.js project
 
