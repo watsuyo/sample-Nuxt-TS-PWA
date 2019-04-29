@@ -31,10 +31,11 @@ $ yarn start
 
 #### リポジトリモデル
 - GitHub Flow
+
 masterブランチからreleaseブランチを切って開発
 
 #### ブランチ名
-例： feature/components/commnt-area
+例： feature/components/comment-area
 
 第１キーワード
 - feature
