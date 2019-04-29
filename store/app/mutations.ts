@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import { MutationTree } from 'vuex'
+import { DeviceWidth } from '~/store/app/types'
 
 export default {
   setOnlyPc(state: { only: object }, payload: { isPc: boolean}) {
@@ -7,4 +9,4 @@ export default {
   setOnlySp(state: { only: object }, payload: { isSp: boolean}) {
     Vue.set(state.only, 'sp', payload.isSp)
   }
-}
+} as MutationTree<DeviceWidth>

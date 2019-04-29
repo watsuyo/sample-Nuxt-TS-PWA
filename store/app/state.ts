@@ -1,6 +1,6 @@
-import { WidthState } from '~/store/app/types'
+import { DeviceWidth } from '~/store/app/types'
 
-export default (): WidthState => ({
+export default (): DeviceWidth => ({
   breakpoint: 768,
   only: {
     pc: false,
