@@ -1,10 +1,10 @@
 import Vue from 'vue'
 
 export default {
-  setOnlyPc(state, { payload }) {
+  setOnlyPc(state: { only: object }, payload: { isPc: boolean}) {
     Vue.set(state.only, 'pc', payload.isPc)
   },
-  setOnlySp(state, { payload }) {
+  setOnlySp(state: { only: object }, payload: { isSp: boolean}) {
     Vue.set(state.only, 'sp', payload.isSp)
   }
 }
