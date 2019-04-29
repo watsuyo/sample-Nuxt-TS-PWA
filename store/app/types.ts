@@ -4,5 +4,6 @@ export interface DeviceWidth {
 }
 
 export interface DeviceWidthState {
-  all:  DeviceWidth[]
+  all:  DeviceWidth[],
+  only: DeviceWidth[]
 }
