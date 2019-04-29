@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <div>
+    <div v-if="only.sp">
       <logo />
       <h1 class="title">
         Nuxt-TypeScript
@@ -21,11 +21,17 @@
         </a>
       </div>
     </div>
+    <!-- TODO: kawasumi PCviewのコンポーネントを作成 -->
+    <div v-else>
+      スマートフォンでご覧ください
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
+import { DeviceWidth } from '~/store/app/types';
 
 @Component({
   components: {
@@ -33,7 +39,9 @@ import { Component, Vue } from 'vue-property-decorator';
     Logo: () => import('~/components/Logo.vue')
   }
 })
-export default class cosmes extends Vue {}
+export default class cosmes extends Vue {
+  @Getter('app/getOnlys') only!: DeviceWidth[];
+}
 </script>
 
 <style>
