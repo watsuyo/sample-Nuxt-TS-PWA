@@ -31,7 +31,7 @@ import { Component, Vue } from 'vue-property-decorator';
     Logo: () => import('~/components/Logo.vue')
   }
 })
-export default class cosmes extends Vue {}
+export default class items extends Vue {}
 </script>
 
 <style>
