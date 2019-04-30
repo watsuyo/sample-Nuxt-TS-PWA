@@ -1,15 +1,12 @@
 export interface Item {
-  id: number
-  itemname: string
-  user_id: number
-  product_id: number
-  brand_id: number
-  item_id: number
-  color_id: number
-  love_rate: number
-  image: string
-  pick_rate: number
-  created_at: string
+  id: number,
+  number: number,
+  name: string,
+  product_id: number,
+  pc_id: number,
+  image: string,
+  status: number,
+  created_at: string,
   updated_at: string
 }
 
