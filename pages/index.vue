@@ -24,8 +24,6 @@
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
-import { DeviceWidth } from '../store/app/types';
 
 @Component({
   components: {
@@ -33,9 +31,7 @@ import { DeviceWidth } from '../store/app/types';
     Logo: () => import('~/components/Logo.vue')
   }
 })
-export default class items extends Vue {
-  @Getter('app/getOnlys') only!: DeviceWidth[];
-}
+export default class items extends Vue {}
 </script>
 
 <style>
