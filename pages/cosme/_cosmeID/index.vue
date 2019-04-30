@@ -1,12 +1,8 @@
 <template>
-  <DeviceWidthContainer v-slot="{ only }">
-    <template :only="only.sp">
-      <CosmeContainer v-slot="{ cosmes }">
-        <template v-for="cosme in cosmes">
-          <CosmeDetail :key="cosme.id" :cosme="cosme" />
-        </template>
-      </CosmeContainer>
-    </template>
+  <DeviceWidthContainer v-slot="{ only }" :only="only.sp">
+    <CosmeContainer v-slot="{ cosmes }">
+      <CosmeDetail v-for="cosme in cosmes" :key="cosme.id" :cosme="cosme" />
+    </CosmeContainer>
   </DeviceWidthContainer>
 </template>
 
