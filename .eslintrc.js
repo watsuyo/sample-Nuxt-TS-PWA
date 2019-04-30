@@ -11,6 +11,7 @@ module.exports = {
     ecmaFeatures: { "legacyDecorators": true }
   },
   extends: [
+    "eslint:recommended",
     '@nuxtjs',
     'plugin:nuxt/recommended',
     'plugin:prettier/recommended',
@@ -32,5 +33,5 @@ module.exports = {
         { "trailingComma": "es5" }
     ]
   },
-  
+
 }
