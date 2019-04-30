@@ -1,6 +1,6 @@
 <template>
   <section class="container">
-    <div>
+    <DeviceWidthContainer v-slot="{ only }" :only="only.sp">
       <logo />
       <h1 class="title">
         Nuxt-TypeScript
@@ -20,20 +20,27 @@
           GitHub
         </a>
       </div>
-    </div>
+      <!-- TODO: kawasumi PCviewのコンポーネントを作成 -->
+    </DeviceWidthContainer>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
+import { Getter } from 'vuex-class';
+import { DeviceWidth } from '~/store/app/types';
 
 @Component({
   components: {
     // @ts-ignore ←importでエラーが出れば使う
-    Logo: () => import('~/components/Logo.vue')
+    Logo: () => import('~/components/Logo.vue'),
+    DeviceWidthContainer: () =>
+      import('~/components/container/DeviceWidthContainer.vue')
   }
 })
-export default class cosmes extends Vue {}
+export default class cosmes extends Vue {
+  @Getter('app/getOnlys') only!: DeviceWidth[];
+}
 </script>
 
 <style>
