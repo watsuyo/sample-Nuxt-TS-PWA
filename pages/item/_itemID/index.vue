@@ -10,6 +10,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
+  layout: 'globalnav',
   components: {
     DeviceWidthContainer: () =>
       import('~/components/container/DeviceWidthContainer.vue'),
