@@ -12,7 +12,7 @@ import { Getter } from 'vuex-class';
 import { DeviceWidth } from '~/store/app/types';
 
 @Component
-export default class CosmeContainer extends Vue {
+export default class ItemContainer extends Vue {
   @Getter('app/getOnlys') only!: DeviceWidth[];
 }
 </script>

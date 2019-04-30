@@ -38,7 +38,7 @@ import { DeviceWidth } from '~/store/app/types';
       import('~/components/container/DeviceWidthContainer.vue')
   }
 })
-export default class cosmes extends Vue {
+export default class items extends Vue {
   @Getter('app/getOnlys') only!: DeviceWidth[];
 }
 </script>

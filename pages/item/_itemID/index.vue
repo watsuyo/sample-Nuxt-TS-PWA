@@ -1,8 +1,8 @@
 <template>
-  <DeviceWidthContainer v-slot="{ only }" :only="only.sp">
-    <CosmeContainer v-slot="{ cosmes }">
-      <CosmeDetail v-for="cosme in cosmes" :key="cosme.id" :cosme="cosme" />
-    </CosmeContainer>
+  <DeviceWidthContainer v-slot="{ only }">
+    <ItemContainer v-slot="{ items }">
+      <ItemDetail v-for="item in items" :key="item.id" :item="item" />
+    </ItemContainer>
   </DeviceWidthContainer>
 </template>
 
@@ -13,11 +13,11 @@ import { Component, Vue } from 'vue-property-decorator';
   components: {
     DeviceWidthContainer: () =>
       import('~/components/container/DeviceWidthContainer.vue'),
-    CosmeContainer: () => import('~/components/container/CosmeContainer.vue'),
-    CosmeDetail: () => import('~/components/presentations/CosmeDetail.vue')
+    ItemContainer: () => import('~/components/container/ItemContainer.vue'),
+    ItemDetail: () => import('~/components/presentations/ItemDetail.vue')
   },
   async fetch({ store, params }) {
-    await store.dispatch('cosmes/fetchCosmesByCosmeID', params.cosmeID);
+    await store.dispatch('items/fetchItemsByItemID', params.itemID);
   }
 })
 export default class Home extends Vue {}
