@@ -1,46 +1,37 @@
 <template>
   <section class="container">
-    <DeviceWidthContainer v-slot="{ only }" :only="only.sp">
-      <logo />
-      <h1 class="title">
-        Nuxt-TypeScript
-      </h1>
-      <h2 class="subtitle">
-        My neat Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <!-- TODO: kawasumi PCviewのコンポーネントを作成 -->
-    </DeviceWidthContainer>
+    <logo />
+    <h1 class="title">
+      Nuxt-TypeScript
+    </h1>
+    <h2 class="subtitle">
+      My neat Nuxt.js project
+    </h2>
+    <div class="links">
+      <a href="https://nuxtjs.org/" target="_blank" class="button--green">
+        Documentation
+      </a>
+      <a
+        href="https://github.com/nuxt/nuxt.js"
+        target="_blank"
+        class="button--grey"
+      >
+        GitHub
+      </a>
+    </div>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { Getter } from 'vuex-class';
-import { DeviceWidth } from '~/store/app/types';
 
 @Component({
   components: {
     // @ts-ignore ←importでエラーが出れば使う
-    Logo: () => import('~/components/Logo.vue'),
-    DeviceWidthContainer: () =>
-      import('~/components/container/DeviceWidthContainer.vue')
+    Logo: () => import('~/components/Logo.vue')
   }
 })
-export default class cosmes extends Vue {
-  @Getter('app/getOnlys') only!: DeviceWidth[];
-}
+export default class cosmes extends Vue {}
 </script>
 
 <style>

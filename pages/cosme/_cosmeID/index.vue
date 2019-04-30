@@ -1,18 +1,15 @@
 <template>
-  <DeviceWidthContainer v-slot="{ only }" :only="only.sp">
-    <CosmeContainer v-slot="{ cosmes }">
-      <CosmeDetail v-for="cosme in cosmes" :key="cosme.id" :cosme="cosme" />
-    </CosmeContainer>
-  </DeviceWidthContainer>
+  <CosmeContainer v-slot="{ cosmes }">
+    <CosmeDetail v-for="cosme in cosmes" :key="cosme.id" :cosme="cosme" />
+  </CosmeContainer>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 
 @Component({
+  layout: 'globalnav',
   components: {
-    DeviceWidthContainer: () =>
-      import('~/components/container/DeviceWidthContainer.vue'),
     CosmeContainer: () => import('~/components/container/CosmeContainer.vue'),
     CosmeDetail: () => import('~/components/presentations/CosmeDetail.vue')
   },
