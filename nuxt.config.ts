@@ -32,6 +32,8 @@ const nuxtConfig: NuxtConfiguration = {
   ** Global CSS
   */
   css: [
+    'sanitize.css',
+    '~/assets/scss/root.scss'
   ],
 
   /*
