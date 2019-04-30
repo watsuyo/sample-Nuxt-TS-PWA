@@ -1,4 +1,4 @@
-<h1 align="center">Colore Frontend Develop</h1>
+# Chrole
 
 ## ビルド環境構築
 ``` bash

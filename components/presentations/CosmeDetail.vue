@@ -1,7 +1,7 @@
 <template>
   <div>
     <CosmeSummary />
-    {{ cosme.cosmename }}
+    <p>{{ cosme.cosmename }}</p>
     <img :src="cosme.image" />
   </div>
 </template>
