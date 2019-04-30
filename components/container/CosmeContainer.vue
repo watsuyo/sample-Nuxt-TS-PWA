@@ -1,8 +1,6 @@
 <template>
   <div>
-    <slot v-if="only.sp" :cosmes="cosmes" />
-    <!-- TODO: kawasumi PCviewのコンポーネントを作成 -->
-    <div v-else>スマートフォンでご覧ください</div>
+    <slot :cosmes="cosmes" />
   </div>
 </template>
 
@@ -10,11 +8,9 @@
 import { Component, Vue } from 'vue-property-decorator';
 import { Getter } from 'vuex-class';
 import { Cosme } from '~/store/cosmes/types';
-import { DeviceWidth } from '~/store/app/types';
 
 @Component
 export default class CosmeContainer extends Vue {
   @Getter('cosmes/getCosmesByCosmeID') cosmes!: Cosme[];
-  @Getter('app/getOnlys') only!: DeviceWidth[];
 }
 </script>

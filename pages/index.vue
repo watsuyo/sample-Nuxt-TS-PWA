@@ -1,30 +1,29 @@
 <template>
   <section class="container">
-    <div v-if="only.sp">
-      <logo />
-      <h1 class="title">
-        Nuxt-TypeScript
-      </h1>
-      <h2 class="subtitle">
-        My neat Nuxt.js project
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
-    <!-- TODO: kawasumi PCviewのコンポーネントを作成 -->
-    <div v-else>
-      スマートフォンでご覧ください
-    </div>
+    <DeviceWidthContainer v-slot="{ only }">
+      <template :only="only.sp">
+        <logo />
+        <h1 class="title">
+          Nuxt-TypeScript
+        </h1>
+        <h2 class="subtitle">
+          My neat Nuxt.js project
+        </h2>
+        <div class="links">
+          <a href="https://nuxtjs.org/" target="_blank" class="button--green">
+            Documentation
+          </a>
+          <a
+            href="https://github.com/nuxt/nuxt.js"
+            target="_blank"
+            class="button--grey"
+          >
+            GitHub
+          </a>
+        </div>
+        <!-- TODO: kawasumi PCviewのコンポーネントを作成 -->
+      </template>
+    </DeviceWidthContainer>
   </section>
 </template>
 
@@ -36,7 +35,9 @@ import { DeviceWidth } from '~/store/app/types';
 @Component({
   components: {
     // @ts-ignore ←importでエラーが出れば使う
-    Logo: () => import('~/components/Logo.vue')
+    Logo: () => import('~/components/Logo.vue'),
+    DeviceWidthContainer: () =>
+      import('~/components/container/DeviceWidthContainer.vue')
   }
 })
 export default class cosmes extends Vue {
